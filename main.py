@@ -79,7 +79,7 @@ while True:
                 final.remove(ele)
         print(f"{i} Technology News Tweeted")
         del final
-
+        '''
         final = anime.give_me_news()                    # [[main_url, image_url, title, author, content]]
 
         consumer_key = environ['consumer_key_anime']
@@ -101,3 +101,4 @@ while True:
                 final.remove(ele)
         print(f"{i} Anime News Tweeted")
         del final
+        '''
