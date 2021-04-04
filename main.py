@@ -27,19 +27,19 @@ while True:
         auth.set_access_token(access_key, access_secret)
         api = tw.API(auth, wait_on_rate_limit=True)
 
+        print(len(final))
         i = 0
         for ele in final:
             try:
                 api.update_status(status=f"{ele[1]} \n\t\t -{ele[2]} \n#CodingNews #News #ProgrammingNews #Coding #Programming \n{ele[0]}")
-                time.sleep(15)
                 i += 1
             except:
                 final.remove(ele)
-        print(f"{i} Coding News Tweeted")
+        print(f"{len(final)} Coding News Tweeted")
         del final
 
         final = game.give_me_news()                     # [[main_url, image_url, title, author, content]]
-
+        print(len(final))
         consumer_key = environ['consumer_key_gaming']
         consumer_secret = environ['consumer_secret_gaming']
         access_key = environ['access_key_gaming']
@@ -47,12 +47,12 @@ while True:
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_key, access_secret)
         api = tw.API(auth, wait_on_rate_limit=True)
+        api.update_status(status="hello")
 
         i = 0
         for ele in final:
             try:
                 api.update_status(status=f"{ele[2]} \n\t\t -{ele[3]} \n#GamingNews #News #Games \n{ele[0]}")
-                time.sleep(15)
                 i += 1
             except:
                 final.remove(ele)
@@ -60,7 +60,7 @@ while True:
         del final
 
         final = tech.give_me_news()                     # [[main_url, image_url, title, author, content]]
-
+        print(len(final))
         consumer_key = environ['consumer_key_tech']
         consumer_secret = environ['consumer_secret_tech']
         access_key = environ['access_key_tech']
@@ -68,18 +68,18 @@ while True:
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_key, access_secret)
         api = tw.API(auth, wait_on_rate_limit=True)
+        api.update_status(status="hello")
 
         i = 0
         for ele in final:
             try:
                 api.update_status(status=f"{ele[2]}\n\t\t -{ele[3]}\n#TechnologyNews #TechNews #News #Technology\n{ele[0]}")
-                time.sleep(15)
                 i += 1
             except:
                 final.remove(ele)
         print(f"{i} Technology News Tweeted")
         del final
-        '''
+
         final = anime.give_me_news()                    # [[main_url, image_url, title, author, content]]
 
         consumer_key = environ['consumer_key_anime']
@@ -101,4 +101,3 @@ while True:
                 final.remove(ele)
         print(f"{i} Anime News Tweeted")
         del final
-        '''

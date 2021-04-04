@@ -2,13 +2,21 @@
 import requests
 from bs4 import BeautifulSoup
 import datetime
+import pytz
 
 url = 'https://gadgets.ndtv.com/news'
 Optimal_News = []
 final = []
 
+# get the standard UTC time
+UTC = pytz.utc
+
+# it will get the time zone
+# of the specified location
+IST = pytz.timezone('Asia/Kolkata')
+
 # get the date of the day , last hour from current time date
-last_hour_date_time = datetime.datetime.now() - datetime.timedelta(hours=1)
+last_hour_date_time = datetime.datetime.now(IST) - datetime.timedelta(hours=1)
 date = str(last_hour_date_time).split()[0]              # return as a string format: yy-mm-dd
 
 
