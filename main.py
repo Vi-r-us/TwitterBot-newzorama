@@ -23,6 +23,7 @@ while True:
         consumer_secret = environ['consumer_secret_coding']
         access_key = environ['access_key_coding']
         access_secret = environ['access_secret_coding']
+
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_key, access_secret)
         api = tw.API(auth, wait_on_rate_limit=True)
@@ -44,10 +45,10 @@ while True:
         consumer_secret = environ['consumer_secret_gaming']
         access_key = environ['access_key_gaming']
         access_secret = environ['access_secret_gaming']
+
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_key, access_secret)
         api = tw.API(auth, wait_on_rate_limit=True)
-        api.update_status(status="hello")
 
         i = 0
         for ele in final:
@@ -65,10 +66,10 @@ while True:
         consumer_secret = environ['consumer_secret_tech']
         access_key = environ['access_key_tech']
         access_secret = environ['access_secret_tech']
+
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_key, access_secret)
         api = tw.API(auth, wait_on_rate_limit=True)
-        api.update_status(status="hello")
 
         i = 0
         for ele in final:
