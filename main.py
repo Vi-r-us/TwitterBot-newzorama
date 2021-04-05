@@ -28,7 +28,6 @@ while True:
         auth.set_access_token(access_key, access_secret)
         api = tw.API(auth, wait_on_rate_limit=True)
 
-        print(len(final))
         i = 0
         for ele in final:
             try:
@@ -40,7 +39,6 @@ while True:
         del final
 
         final = game.give_me_news()                     # [[main_url, image_url, title, author, content]]
-        print(len(final))
         consumer_key = environ['consumer_key_gaming']
         consumer_secret = environ['consumer_secret_gaming']
         access_key = environ['access_key_gaming']
@@ -61,7 +59,6 @@ while True:
         del final
 
         final = tech.give_me_news()                     # [[main_url, image_url, title, author, content]]
-        print(len(final))
         consumer_key = environ['consumer_key_tech']
         consumer_secret = environ['consumer_secret_tech']
         access_key = environ['access_key_tech']
