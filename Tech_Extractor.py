@@ -81,7 +81,7 @@ def give_me_news():
             temp = page_soup.find('div', class_="content_text row description").find_all('p')
             content = f"{temp[0].text} {temp[1].text} {temp[2].text}"
 
-            last_hour_date_time = datetime.datetime.now() - datetime.timedelta(hours=1)
+            last_hour_date_time = datetime.datetime.now(IST) - datetime.timedelta(hours=1)
 
             # if the news is from last hour then only append it to final
             if page_soup.find('div', class_="content_block white_bg row margin_b30").find('div', class_="dateline").span['title'].split(" ")[4].split(":")[0] == last_hour_date_time.strftime("%H"):

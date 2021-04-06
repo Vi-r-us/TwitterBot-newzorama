@@ -99,3 +99,5 @@ while True:
                 final.remove(ele)
         print(f"{i} Anime News Tweeted")
         del final
+
+        time.sleep(60)
