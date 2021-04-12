@@ -2,21 +2,14 @@
 import requests
 from bs4 import BeautifulSoup
 import datetime
-import pytz
+
 
 url = 'https://gadgets.ndtv.com/news'
 Optimal_News = []
 final = []
 
-# get the standard UTC time
-UTC = pytz.utc
-
-# it will get the time zone
-# of the specified location
-IST = pytz.timezone('Asia/Kolkata')
-
 # get the date of the day , last hour from current time date
-last_hour_date_time = datetime.datetime.now(IST) - datetime.timedelta(hours=1)
+last_hour_date_time = datetime.datetime.now() + datetime.timedelta(hours=4, minutes=30)
 date = str(last_hour_date_time).split()[0]              # return as a string format: yy-mm-dd
 
 
@@ -81,7 +74,7 @@ def give_me_news():
             temp = page_soup.find('div', class_="content_text row description").find_all('p')
             content = f"{temp[0].text} {temp[1].text} {temp[2].text}"
 
-            last_hour_date_time = datetime.datetime.now(IST) - datetime.timedelta(hours=1)
+            last_hour_date_time = datetime.datetime.now() - datetime.timedelta(hours=4, minutes=30)
 
             # if the news is from last hour then only append it to final
             if page_soup.find('div', class_="content_block white_bg row margin_b30").find('div', class_="dateline").span['title'].split(" ")[4].split(":")[0] == last_hour_date_time.strftime("%H"):

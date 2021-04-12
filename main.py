@@ -31,7 +31,7 @@ while True:
         i = 0
         for ele in final:
             try:
-                api.update_status(status=f"{ele[1]} \n\t\t -{ele[2]} \n#CodingNews #News #ProgrammingNews #Coding #Programming \n{ele[0]}")
+                api.update_status(status=f"{ele[1]} \n\t\t -{ele[2]} \n{ele[0]}")
                 i += 1
             except:
                 final.remove(ele)
@@ -51,7 +51,7 @@ while True:
         i = 0
         for ele in final:
             try:
-                api.update_status(status=f"{ele[2]} \n\t\t -{ele[3]} \n#GamingNews #News #Games \n{ele[0]}")
+                api.update_status(status=f"{ele[2]} \n\t\t -{ele[3]} \n{ele[0]}")
                 i += 1
             except:
                 final.remove(ele)
@@ -71,7 +71,7 @@ while True:
         i = 0
         for ele in final:
             try:
-                api.update_status(status=f"{ele[2]}\n\t\t -{ele[3]}\n#TechnologyNews #TechNews #News #Technology\n{ele[0]}")
+                api.update_status(status=f"{ele[2]}\n\t\t -{ele[3]}\n{ele[0]}")
                 i += 1
             except:
                 final.remove(ele)
@@ -92,7 +92,7 @@ while True:
         i = 0
         for ele in final:
             try:
-                api.update_status(status=f"{ele[2]} \n\t\t -{ele[3]} \n#Anime #AnimeNews #News \n{ele[0]}")
+                api.update_status(status=f"{ele[2]} \n\t\t -{ele[3]} \n{ele[0]}")
                 time.sleep(15)
                 i += 1
             except:
