@@ -32,6 +32,7 @@ while True:
         for ele in final:
             try:
                 api.update_status(status=f"{ele[1]} \n\t\t -{ele[2]} \n{ele[0]}")
+                time.sleep(15)
                 i += 1
             except:
                 final.remove(ele)
@@ -52,6 +53,7 @@ while True:
         for ele in final:
             try:
                 api.update_status(status=f"{ele[2]} \n\t\t -{ele[3]} \n{ele[0]}")
+                time.sleep(15)
                 i += 1
             except:
                 final.remove(ele)
@@ -72,6 +74,7 @@ while True:
         for ele in final:
             try:
                 api.update_status(status=f"{ele[2]}\n\t\t -{ele[3]}\n{ele[0]}")
+                time.sleep(15)
                 i += 1
             except:
                 final.remove(ele)

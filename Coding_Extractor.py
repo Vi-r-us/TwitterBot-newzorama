@@ -56,3 +56,4 @@ def give_me_news():
                 else:
                     final.append([main_url, title, author])
     return final
+
