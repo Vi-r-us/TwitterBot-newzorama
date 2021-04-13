@@ -28,15 +28,16 @@ while True:
         auth.set_access_token(access_key, access_secret)
         api = tw.API(auth, wait_on_rate_limit=True)
 
-        i = 0
-        for ele in final:
-            try:
-                api.update_status(status=f"{ele[1]} \n\t\t -{ele[2]} \n{ele[0]}")
-                time.sleep(15)
-                i += 1
-            except:
-                final.remove(ele)
-        print(f"{len(final)} Coding News Tweeted")
+        if len(final) > 10:
+            i = 0
+            for ele in final[:10]:
+                try:
+                    api.update_status(status=f"{ele[1]} \n\t\t -{ele[2]} \n{ele[0]}")
+                    time.sleep(15)
+                    i += 1
+                except:
+                    final.remove(ele)
+            print(f"{len(final)} Coding News Tweeted")
         del final
 
         final = game.give_me_news()                     # [[main_url, image_url, title, author, content]]
