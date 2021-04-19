@@ -30,7 +30,7 @@ while True:
 
         if len(final) > 10:
             i = 0
-            for ele in final[:10]:
+            for ele in final[:5]:
                 try:
                     api.update_status(status=f"{ele[1]} \n\t\t -{ele[2]} \n{ele[0]}")
                     time.sleep(15)
