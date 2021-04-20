@@ -1,7 +1,9 @@
+
 # Import Required Modules
 import requests
 from bs4 import BeautifulSoup
 
+# Site URL from which data will be extracted
 url = 'https://in.ign.com/'
 final = []
 
